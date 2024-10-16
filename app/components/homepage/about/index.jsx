@@ -1,0 +1,51 @@
+// @flow strict
+
+import { personalData } from "@/utils/data/personal-data";
+import Image from "next/image";
+
+
+function AboutSection() {
+  return (
+    <div id="about" className="my-12 lg:my-16 relative">
+      <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
+        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
+          ABOUT ME
+        </span>
+        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="order-2 lg:order-1">
+          <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
+            Who I am?
+          </p>
+          <p className="text-white-200 text-sm lg:text-lg mb-4">
+            {personalData.description}
+          </p>
+          <p className="text-white-200 text-sm lg:text-lg mb-4">
+            {personalData.description1}
+          </p>
+          <p className="text-white-200 text-sm lg:text-lg mb-4">
+            {personalData.description2}
+          </p>
+          <p className="text-white-200 text-sm lg:text-lg mb-4">
+            {personalData.description3}
+          </p>
+          <p className="text-white-200 text-sm lg:text-lg mb-4">
+            {personalData.description4}
+          </p>
+        </div>
+        <div className=" grid place-items-center order-1 lg:order-2">
+          <Image
+            src={personalData.profile}
+            width={480}
+            height={480}
+            alt="Mohammad stands in front of the camera, folding his hands and smiling, wearing a black NASA t-shirt and a watch on his left hand."
+            className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 sm:cursor-pointer lg:cursor-default"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AboutSection;
